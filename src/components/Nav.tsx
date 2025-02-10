@@ -1,21 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-const Nav = () => {
+export default function Nav() {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
+    <nav className="p-4 bg-gray-800 text-white flex justify-between">
+      <h1 className="text-xl font-bold">Candidate Search</h1>
+      <div className="space-x-4">
+        <Link to="/">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded">Search Candidates</button>
+        </Link>
+        <Link to="/saved">
+          <button className="bg-green-500 text-white px-4 py-2 rounded">Saved Candidates</button>
+        </Link>
+      </div>
     </nav>
   );
-};
-
-export default Nav;
+}
